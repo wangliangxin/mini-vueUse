@@ -3,7 +3,11 @@
  interface ConfigurableWindow {
     window?: Window
  }
-
+/**
+ * @description: 获取当前acitiveElment
+ * @param {ConfigurableWindow} options
+ * @return {*}
+ */
 export function useActiveElement<T extends HTMLElement>(options: ConfigurableWindow = {}){
     const { window =  defaultwindow } = options
     const counter = ref(0)
@@ -16,3 +20,8 @@ export function useActiveElement<T extends HTMLElement>(options: ConfigurableWin
         return window?.document.activeElement as T | null | undefined
     })
 }
+
+/**
+ *  1. window?.document.activeElement
+ *  2. 利用counter结合计算属性，实现activeElement响应式
+ */

@@ -1,3 +1,7 @@
 
 const defaultwindow = window || undefined
-export { defaultwindow }
+const noop = () => {}
+export { 
+    defaultwindow,
+    noop 
+}
